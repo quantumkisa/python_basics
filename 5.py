@@ -1,9 +1,16 @@
-my_list = [7, 5, 3, 3, 2]
-digit = int(input("Введите натуральное число"))
-my_list.append(digit)
-my_list = sorted(my_list)
-my_list.reverse()
-print(my_list)
-# сделала основываясь на примере.
-# там максимум добавлялся в начало, минимум в конец, повторные стояли друг за другом.
+def my_sum():
+    sum_res = 0
+    count = True
+    while count == True:
+        a = input('введите числа через пробел или Q для остановки программы.').split()
+        res = 0
+        for el in range(len(a)):
+            if a[el] == 'Q':
+                count = False
+                break
+            else:
+                res += int(a[el])
+        sum_res += res
+        print('текущая сумма =', sum_res)
+    print('итоговая сумма =', sum_res)
 

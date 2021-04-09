@@ -1,12 +1,11 @@
-list_2 = [int(x) for x in input("Введите значения через пробел").split()]
-a = 0
-length_list = len(list_2)
-for elem_position in range(length_list):
-    if elem_position == length_list - 1:
-        continue
-    elif elem_position == 0 or elem_position % 2 == 0:
-        a = list_2.pop(elem_position + 1)
-        list_2.insert(elem_position, a)
-    else:
-        continue
-print(list_2)
+def my_func(name, surname, year, city, email, telephone):
+    return ' '.join([name, surname, year, city, email, telephone])
+
+
+name = input('введите имя')
+surname = input('введите фамилию')
+year = (input('введите год рождения'))
+city = input('введите город')
+email = input('введите email')
+telephone = input('введите номер телефона')
+print(my_func(name, surname, year, city, email, telephone))

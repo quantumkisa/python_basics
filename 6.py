@@ -1,24 +1,30 @@
-my_list = [
-    (1, {'название': input("Введите название первого устройства"), 'цена': input("Введите цену первого устройства"),
-         'количество': input("Введите кол-во купленных устройств первого типа"),
-         'eд': input("Введите единицы измерения устройства")}),
-    (2, {'название': input("Введите название второго устройства"), 'цена': input("Введите цену второго устройства"),
-         'количество': input("Введите кол-во купленных устройств второго типа"),
-         'eд': input("Введите единицы измерения устройства")}),
-    (3, {'название': input("Введите название третьего устройства"), 'цена': input("Введите цену третьего устройства"),
-         'количество': input("Введите кол-во купленных устройств третьего типа"),
-         'eд': input("Введите единицы измерения устройства")})
-]
-new_dict = {}
-for el_list in my_list:
-    for el_tuple in el_list:
-        if type(el_tuple) == int:
-            continue
+def int_func(my_string):
+    my_list = list(my_string)
+    my_list[0] = my_list[0].upper()
+    my_string = ''.join(my_list)
+    print(my_string)
+
+
+def int_func_2(my_string):
+    my_list = list(my_string)
+    for i in range(len(my_list)):
+        if i == 0:
+            my_list[i] = my_list[i].upper()
+        elif my_list[i] == ' ':
+            my_list[i + 1] = my_list[i + 1].upper()
         else:
-            for key, value in el_tuple.items():
-                if key not in new_dict:
-                    new_dict[key] = [value]
-                else:
-                    new_dict[key].append(value)
-new_dict = {key: list(set(value)) for key, value in new_dict.items()}
-print(new_dict)
+            continue
+    my_string = ''.join(my_list)
+    print(my_string)
+
+
+my_string = input('ввведите строку с маленькой буквы')
+my_string_2 = input('ввведите слова через пробел')
+int_func(my_string)
+int_func_2(my_string_2)
+
+
+
+
+
+

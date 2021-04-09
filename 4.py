@@ -1,10 +1,18 @@
-string = input('Введите строку из нескольких слов, разделенных пробелом')
-list_from_str = string.split()
-num = 1
-for el in range(string.count(' ') + 1):
-    if len(list_from_str[el]) <= 10:
-        print(f" {num} {list_from_str [el]}")
-        num += 1
-    else:
-        print(f" {num} {list_from_str [el] [0:10]}")
-        num += 1
+def my_func(x, y):
+    return x**y
+
+
+def my_func_2(x, y):
+    result = x
+    count = abs(y)
+    while count != 1:
+        result *= x
+        count -= 1
+    result = 1 / result
+    return result
+
+
+x = float(input("введите действительное положительное число"))
+y = int(input("введите целое отрицательное число"))
+print(my_func(x, y))
+print(my_func_2(x, y))
