@@ -14,5 +14,3 @@ def my_sum():
         print('текущая сумма =', sum_res)
     print('итоговая сумма =', sum_res)
 
-
-my_sum()
